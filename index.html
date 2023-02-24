@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lottery Number Generators</title>
+  <style>
+    div {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h2>EuroMillions Generator</h2>
+    <p>Main numbers: <span id="euro-main-numbers"></span></p>
+    <p>Lucky star numbers: <span id="euro-lucky-star-numbers"></span></p>
+    <button onclick="generateEuroNumbers()">Generate EuroMillions Numbers</button>
+  </div>
+
+  <div>
+    <h2>Thunderball Generator</h2>
+    <p>Main numbers: <span id="tb-main-numbers"></span></p>
+    <p>Thunderball number: <span id="tb-number"></span></p>
+    <button onclick="generateTBNumbers()">Generate Thunderball Numbers</button>
+  </div>
+
+  <div>
+    <h2>Lotto Generator</h2>
+    <p>Main numbers: <span id="lotto-main-numbers"></span></p>
+    <button onclick="generateLottoNumbers()">Generate Lotto Numbers</button>
+  </div>
+
+  <div>
+    <h2>Set For Life Generator</h2>
+    <p>Main numbers: <span id="set-for-life-main-numbers"></span></p>
+    <p>Life ball number: <span id="set-for-life-life-ball"></span></p>
+    <button onclick="generateSetForLifeNumbers()">Generate Set For Life Numbers</button>
+  </div>
+
+  <script>
+    function generateEuroNumbers() {
+      // Generate 5 main numbers between 1 and 50
+      var euroMainNumbers = [];
+      while (euroMainNumbers.length < 5) {
+        var number = Math.floor(Math.random() * 50) + 1;
+        if (euroMainNumbers.indexOf(number) === -1) {
+          euroMainNumbers.push(number);
+        }
+      }
+
+      // Generate 2 "lucky star" numbers between 1 and 12
+      var euroLuckyStarNumbers = [];
+      while (euroLuckyStarNumbers.length < 2) {
+        var number = Math.floor(Math.random() * 12) + 1;
+        if (euroLuckyStarNumbers.indexOf(number) === -1) {
+          euroLuckyStarNumbers.push(number);
+        }
+      }
+
+      // Display the generated numbers in the HTML document
+      var euroMainNumbersElement = document.getElementById("euro-main-numbers");
+      euroMainNumbersElement.innerHTML = euroMainNumbers.join(", ");
+
+      var euroLuckyStarNumbersElement = document.getElementById("euro-lucky-star-numbers");
+      euroLuckyStarNumbersElement.innerHTML = euroLuckyStarNumbers.join(", ");
+    }
+
+    function generateTBNumbers() {
+      // Generate 5 main numbers between 1 and 39
+      var tbMainNumbers = [];
+      while (tbMainNumbers.length < 5) {
+        var number = Math.floor(Math.random() * 39) + 1;
+        if (tbMainNumbers.indexOf(number) === -1) {
+          tbMainNumbers.push(number);
+        }
+      }
+
+      // Generate 1 Thunderball number between 1 and 14
+      var tbNumber = Math.floor(Math.random() * 14) + 1;
+
+      // Display the generated numbers in the HTML document
+      var tbMainNumbersElement = document.getElementById("tb-main-numbers");
+      tbMainNumbersElement.innerHTML = tbMainNumbers.join(", ");
+
+      var tbNumberElement = document.getElementById("tb-number");
+      tbNumberElement.innerHTML = tbNumber;
+    }
+
+    function generateLottoNumbers() {
+      // Generate 6 main numbers between 1 and 59
+      var tbMainNumbers = [];
+      while (tbMainNumbers.length < 6) {
+        var number = Math.floor(Math.random() * 59) + 1;
+        if (tbMainNumbers.indexOf(number) === -1) {
+          tbMainNumbers.push(number);
+        }
+      }
+
+
+      // Display the generated numbers in the HTML document
+      var tbMainNumbersElement = document.getElementById("lotto-main-numbers");
+      tbMainNumbersElement.innerHTML = tbMainNumbers.join(", ");
+
+    }
+
+    function generateSetForLifeNumbers() {
+      // Generate 5 main numbers between 1 and 47
+      var tbMainNumbers = [];
+      while (tbMainNumbers.length < 5) {
+        var number = Math.floor(Math.random() * 47) + 1;
+        if (tbMainNumbers.indexOf(number) === -1) {
+          tbMainNumbers.push(number);
+        }
+      }
+
+      // Generate 1 Thunderball number between 1 and 10
+      var tbNumber = Math.floor(Math.random() * 10) + 1;
+
+      // Display the generated numbers in the HTML document
+      var tbMainNumbersElement = document.getElementById("set-for-life-main-numbers");
+      tbMainNumbersElement.innerHTML = tbMainNumbers.join(", ");
+
+      var tbNumberElement = document.getElementById("set-for-life-life-ball");
+      tbNumberElement.innerHTML = tbNumber;
+    }
+  </script>
+</body>
+
+</html>
+``
